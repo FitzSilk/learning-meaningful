@@ -1,26 +1,26 @@
 # Java Basics Summary
 
 ## Summary
-- [Variables](#a-namevariablesavariables)
-    - [Primitive types](#a-nameprimitiveaprimitive-types)
-    - [Reference types](#a-namereferenceareference-types)
-- [Expressions](#a-nameexpressionsaexpressions)
-    - [Arithmetical operators](#a-namearithmeticalaarithmetical-operators)
-    - [Relational operators](#a-namelogicalalogical-operators)
-    - [Logical operators](#a-namelogicalalogical-operators)
-- [Methods](#a-namemethodsamethods)
-    - [Method overloading](#a-nameoverloadingamethod-overloading)
-- [Strings](#a-namestringsastrings)
-- [Decision making](#a-namedecisionadecision-making)
-    - [If... Else statements](#a-nameifelseaif-else-statements)
-    - [Switch statements](#a-nameswitchaswitch-statements)
-- [Arrays](#a-namearraysaarrays)
-- [Loops](#a-nameloopsaloops)
-    - [While Loop](#a-namewhileawhile-loop)
-    - [Do...While Loop](#a-namedowhileadowhile-loop)
-    - [For Loop](#a-nameforafor-loop)
-    - [For Each Loop](#a-nameforeachafor-each-loop)
-- [Objects](#a-nameobjectsaobjects)
+- [Variables](#variables)
+    - [Primitive types](#primitive)
+    - [Reference types](#reference)
+- [Expressions](#expressions)
+    - [Arithmetical operators](#arithmetical)
+    - [Relational operators](#relational)
+    - [Logical operators](#logical)
+- [Methods](#methods)
+    - [Method overloading](#overloading)
+- [Strings](#strings)
+- [Decision making](#decision)
+    - [If... Else statements](#ifelse)
+    - [Switch statements](#switchs)
+- [Arrays](#arrays)
+- [Loops](#loops)
+    - [While Loop](#while)
+    - [Do...While Loop](#dowhile)
+    - [For Loop](#for)
+    - [For Each Loop](#foreach)
+- [Objects](#objects)
     
 
 ## <a name="variables"></a>Variables
@@ -559,4 +559,25 @@ They specify from **where** the current class is **importing** the classes it's 
 
 ## <a name="accessmodifiers"></a>Access modifiers
 **Access modifiers** determine how the **_outside world_** is able to **look** at, **access** and **change** parts of an object.  
-Access modifiers specify accessibility for **fields**, **methods** and the **class** itself.
+Access modifiers specify accessibility for **fields**, **methods** and the **class** itself.  
+
+**At the top-level:**  
+
+Access modifier | Same class | Other class (in same Package) | Other class (in different Package) | Sub-class | Any class in codebase
+----- | :-----: | :-----: | :------:| :------:| :-----:
+public | x | x | x | x | x
+no modifier | x | x
+
+**At member-level:**  
+
+Access modifier | Same class | Other class (in same Package) | Other class (in different Package) | Sub-class (also in different Package) | Any class in codebase
+----- | :-----: | :-----: | :------:| :------:| :-----:
+public | x | x | x | x | x
+protected | x | x | | x |
+no modifier | x | x
+private | x
+>The **private** modifier specifies that the member can **only** be accessed in its own class.  
+>The **protected** modifier specifies that the member can only be accessed within its own package and by a subclass in another package.
+
+## <a name="staticclass"></a>Static class members
+**Static** class members operate on the **class** (type) **itself** and not 
