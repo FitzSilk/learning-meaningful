@@ -21,6 +21,14 @@
     - [For Loop](#for)
     - [For Each Loop](#foreach)
 - [Objects](#objects)
+- [Class](#class)
+    - [Instance fields](#instancefields)
+    - [Constructor](#constructor)
+    - [Instance methods](#instancemethods)
+    - [Packages](#packages)
+    - [Imports](#imports)
+    - [Access modifiers](#accessmodifiers)
+    - [Static class members](#staticclass)
     
 
 ## <a name="variables"></a>Variables
