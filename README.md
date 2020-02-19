@@ -1,6 +1,6 @@
 # Java Basics Summary
 
-##Summary
+## Summary
 - [Variables](#a-namevariablesavariables)
     - [Primitive types](#a-nameprimitiveaprimitive-types)
     - [Reference types](#a-namereferenceareference-types)
@@ -27,7 +27,7 @@
 
 Primitive type & reference type
 
-###<a name="primitive"></a>Primitive types:
+### <a name="primitive"></a>Primitive types:
 - Integer
     - **byte** (-128 -> 127) 
         >```byte myAge = 5;```
@@ -49,15 +49,15 @@ Primitive type & reference type
     - a **single character**. It's enclosed by **single quotes**.
         >```char initial = 'A';```
 
-###<a name="reference"></a>Reference types:
+### <a name="reference"></a>Reference types:
 
 A reference type holds a reference, a **pointer** to the object in the heap.
 > ```Cat myCat = new Cat("Garfield");```  
 >```myCat``` is a pointer (#ref) to the cat Garfield in the heap.
 
-##<a name="expressions"></a>Expressions:
+## <a name="expressions"></a>Expressions:
 
-####<a name="arithmetical"></a>Arithmetical operators
+### <a name="arithmetical"></a>Arithmetical operators
 
 - Addition ```+``` 
 >```int addition = 5 + 10;```
@@ -80,7 +80,7 @@ A reference type holds a reference, a **pointer** to the object in the heap.
 - Compound assignement ```+=, -=, %=, *=, /=```
 >```addition += 3;```
 
-####<a name="relational"></a>Relational operators
+### <a name="relational"></a>Relational operators
 
 - Equal to ```==```
 >```boolean isEqual = 5 == 10;```
@@ -95,7 +95,7 @@ A reference type holds a reference, a **pointer** to the object in the heap.
 - Less than or equal to ```<=```
 >```boolean isLessOrEqual = 5 <= 4;```
 
-####<a name="logical"></a>Logical operators
+### <a name="logical"></a>Logical operators
 
 - Logical AND : both are true ```&&```
 >```boolean and = true && false;```
@@ -109,7 +109,7 @@ A reference type holds a reference, a **pointer** to the object in the heap.
 **You can combine these operators :**
 > **```((5 >= 3) && true) && (((2+4) > 5) || (3 < 2)) && !(3!=3) == true```**
 
-##<a name="methods"></a>Methods
+## <a name="methods"></a>Methods
 ```
 public void doSomething(){
     System.out.println("I do!");
@@ -122,7 +122,7 @@ public void doSomething(){
 >Between the ```{}``` (inside the **body**) is the implementation of what the method will do.  
 >You call the method with ```doSomething();``` on your main application.
 
-###<a name="overloading"></a>Method overloading
+### <a name="overloading"></a>Method overloading
 You can **overload** a method and using it to have only one method that will act on differents types of parameters.  
 The combination of the **method’s name** and the **method’s parameter types** is called the **signature** of the method.  
 **A method’s signature needs to be unique**
@@ -139,11 +139,11 @@ public float sum(float n1, float n2){
 }
 ```
 
-##<a name="strings"></a>Strings
+## <a name="strings"></a>Strings
 A **String** represents a sequence of characters. They are enclosed by **double quotes**.
 > ```String myName = "John Doe";```  
 > ```String myName = new String("John";```
-###Useful String methods
+### Useful String methods
 - **substring** method
     ```
     String myName = "John Doe";
@@ -176,11 +176,11 @@ A **String** represents a sequence of characters. They are enclosed by **double 
    ```
    Validates whether or not two String objects are equal (can be override).
    
- ##<a name="decision"></a>Decision making
+ ## <a name="decision"></a>Decision making
  
  Execute a block of statements under a **certain condition**.
  
- ###<a name="ifelse"></a>If... else statements
+ ### <a name="ifelse"></a>If... else statements
  
  ```
 if(<conditional expression>){
@@ -208,7 +208,7 @@ You can execute condition for several conditions.
 >}
 You can combine expressions in one condition.
 
-###<a name="switch"></a>Switch statements
+### <a name="switch"></a>Switch statements
 The **switch** statement is use to **operates on values**.
 ```
 switch(expression){
@@ -253,7 +253,7 @@ switch(expression){
 You **need** the ```break;``` statement otherwise the system will continue to execute your code until it finds a break int it.  
 You can put several cases before the break in order to give the same execution for these cases.
 
-##<a name="arrays"></a>Arrays
+## <a name="arrays"></a>Arrays
 An **array** is a type of **data structure** that stores a **group of variables of the same type**.  
 The **length** of an array is **fixed**. It is set **upon initialization**, **required** and can **never be altered** for that array.  
 **Declaring** an array is done by using the ```[]``` behind is type.
@@ -272,9 +272,9 @@ int amountOfGames = games.length; /// will hold 3
 ```
 **Be aware** that the ```.length``` method here doesn't use ```()```
 
-##<a name="loops"></a>Loops
+## <a name="loops"></a>Loops
 Use to execute statements multiple times.
-###<a name="while"></a>While loop
+### <a name="while"></a>While loop
 ```
 while(<conditional expression">{
     //code to execute
@@ -288,7 +288,7 @@ while(<conditional expression">{
 >    }
 >}
 
-###<a name="dowhile"></a>Do...While loop
+### <a name="dowhile"></a>Do...While loop
 ```
 do{
     //code to execute
@@ -303,7 +303,7 @@ The **Do... While** loop will go through the code **once no matter what** and th
 >   } while(amount > 0);
 >}
    
-###<a name="for"></a>For loop
+### <a name="for"></a>For loop
 ```
 for(<Initialization>; <Condition>; <Increment){
     //code to execute
@@ -317,7 +317,7 @@ The **For** loop will iterate **over a range of values**.
 >   }
 >}
 
-###<a name="foreach"></a>For each loop
+### <a name="foreach"></a>For each loop
 ```
 for(<Declaration> : <array|collection>){
     //code to execute
@@ -334,4 +334,4 @@ The **For each** loop will iterate **over a collection of values** (even without
 >   cat.feed();
 >}
 
-##<a name="objects"></a>Objects
+## <a name="objects"></a>Objects
