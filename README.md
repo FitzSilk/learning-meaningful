@@ -335,3 +335,228 @@ The **For each** loop will iterate **over a collection of values** (even without
 >}
 
 ## <a name="objects"></a>Objects
+
+Objects are **instances** of Classes.
+Objects represent certain **states** and define certain **behaviors**.
+
+state | behavior
+----- | -----
+mood = "Pissed" | meow()  
+>| will return a sound based on the cat's mood.
+isHungry = true | feed()
+> | will increase the cat's energy.
+livesLeft = 9 | play()
+> | will decrease the energy but improve the mood.
+energyLevel = 75 | ...
+Color = "ORANGE" |
+
+### <a name="createObject"></a>Creating an object
+Assuming this **Cat class** exists:
+```
+public class Cat {
+    // these two lines represents the states of the Cat class.
+    public String color; 
+    public int birthDate;
+
+    // this "method" is the constructor of the Cat class.
+    public Cat(String color, int birthDate){ 
+        this.color = color;
+        this.birthDate = birthDate;
+    }
+}
+```
+We can create an object by using the ```new``` operator.
+>```
+>Cat garfield = new Cat("orange", 1978);
+To access the values of the *publicly accessible* **fields / states** of an object, we use the ```.``` operator.
+>```
+>String carColor = garfield.color; // will hold "orange"
+The **behavior** of an object is represented by the **methods** of its class.
+>```
+>public class Cat {
+>    // these two lines represents the states of the Cat class.
+>    public String color; 
+>    public int birthDate;
+>
+>    // this "method" is the constructor of the Cat class.
+>    public Cat(String color, int birthDate){ 
+>        this.color = color;
+>        this.birthDate = birthDate;
+>    }
+>
+>   // this method is the behavior of the cat when he "meow".
+>   public String meow(){
+>       if(birthDate >= 2019) return "Miew miew miew!";
+>       else return "Meeeeow!";
+>   }
+>}
+To call one of the *publicly accessible* methods of an object we use the ```.``` operator.
+>```
+>String catSound = garfield.meow(); // will hold "Meeeeow!"
+
+## <a name="class"></a>Class
+A class is a fundamental structure in object oriented programming.  
+Through a **declaration** *(blueprint)*, a class describe **state** *(fields)* and **behavior** *(methods)*.
+```
+// the package helps to group related types for better code organization.
+package pets;
+
+public class Cat {
+    // these lines represents the states of the Cat class.
+    public String color; 
+    public int birthDate;
+    public String mood;
+
+    // this "method" is the constructor of the Cat class.
+    public Cat(String color, int birthDate, String mood){ 
+        this.color = color;
+        this.birthDate = birthDate;
+        this.mood = mood;
+    }
+
+   // this method allow us to get the name of the cat (not the reference)
+   public String getName(){
+       return name;
+   }
+
+   // this method is the behavior of the cat when he "meow".
+   public String meow(){
+       if(mood.equals("Pissed)) return "Raaauw!";
+       else return "Purr... Miauw!";
+   }
+}
+```
+
+### <a name="instancefields"></a>Instance fields
+They are **variables** of **any types**, **directly declared** in the class and their values is **specific to the object** of the class.
+```
+public class Time{
+    private int hours;
+    private int minutes;
+    private double seconds;
+}
+```
+For **data encapsulation**, it's better to always mark them as **private** or **protected**.  
+They can be accessed by creating a method to **get** them.
+>```
+>public int getHours(){
+>   return hours;
+>}
+
+### <a name="constructor"></a>Constructor
+A constructor is a block of code that is **called** upon creation an object. It's use to **initialize the instances fields**.  
+Every class has a **default constructor**. It **doesn't** take any arguments.  
+We can write our constructor:
+```
+public class Time{
+    private int hours;
+    private int minutes;
+    private double seconds;
+
+    public Time(){
+        hours = 0;
+        minutes = 0;
+        seconds = 0;
+    }
+}
+```
+We can create a constructor with **parameters** that will be called upon declaring a ```new```object of the class.
+>```
+>public class Time{
+>   private int hours;
+>   private int minutes;
+>   private double seconds;
+>   
+>   public Time(int hours, int minutes, double seconds){
+>       this.hours = hours;
+>       this.minutes = minutes;
+>       this.seconds = seconds;
+>   }
+>}
+>
+>Time myTime = new Time(16, 45, 10.0);
+**Warning!** The moment we implement a constructor, the default constructor is no longer available.
+
+Like with **method overloading**, we can create multiple constructors:
+>```
+>public class Time{
+>   // states / fields declarations
+>   
+>   public Time(){
+>       // initialize fields
+>   }
+>   
+>   public Time(int hours, int minutes){
+>       // initialize fields
+>   }
+>
+>   public Time(int hours, int minutes, double seconds){
+>       // initialize fields
+>   }
+>}
+
+We can also set **specific values** if no parameters is sent upon declaration:
+>```
+>public class Time{
+>   // states / fields declarations
+>   
+>   public Time(){
+>       this(12, 30);
+>   }
+>
+>   public Time(int hours, int minutes){
+>       this.hours = hours;
+>       this.minutes = minutes;
+>   }
+>}
+This class will set the time to 12:30 by default, by sending the values of the constructor with no parameters to the other constructor.
+
+### <a name="instancemethods"></a>Instance methods
+Instance methods are part of a **class declaration** and must be called on an **instance** of the **class**.  
+Creating an instance method:
+>```
+>public class Cat {
+>    // class fields
+>
+>    // constructor
+>
+>   // this method allow us to get the name of the cat (not the reference)
+>   public String getName(){
+>       return name;
+>   }
+>
+>   // this method is the behavior of the cat when he "meow".
+>   public String meow(){
+>       if(mood.equals("Pissed)) return "Raaauw!";
+>       else return "Purr... Miauw!";
+>   }
+>}
+Calling an instance method:
+>```
+>Cat garfield = new Cat("Garfield", "Happy");
+>
+>String garfieldSound = garfield.meow();
+
+### <a name="packages"></a>Packages
+**Packages** help to **group** together classes and others that are **related**.  
+Packages help for **better code organization**, **better access protection** and to **help reducing naming conflicts**.  
+A class that **belongs** to a specific package need to define this by using the **package** keyword:
+```
+package pets
+
+public class Cat(){
+    // code of the class
+}
+```
+By convention, packages are written in **lowercase**.  
+Companies often use their **reversed Internet domain name** to define their packages.  
+>```com.swichfully.facebooklet.usermanagement.domain```
+
+### <a name="imports"></a>Imports
+A class (or interface) often starts with **imports** statements.  
+They specify from **where** the current class is **importing** the classes it's **using**.  
+```import java.util.StringJoiner```
+
+## <a name="accessmodifiers"></a>Access modifiers
+**Access modifiers** determine how the **_outside world_** is able to **look** at, **access** and **change** parts of an object.  
+Access modifiers specify accessibility for **fields**, **methods** and the **class** itself.
