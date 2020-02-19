@@ -1,0 +1,23 @@
+# Java Basics Summary
+
+##Summary
+- [Variables](#a-namevariablesavariables)
+    - [Primitive types](#a-nameprimitiveaprimitive-types)
+    - [Reference types](#a-namereferenceareference-types)
+- [Expressions](#a-nameexpressionsaexpressions)
+    - [Arithmetical operators](#a-namearithmeticalaarithmetical-operators)
+    - [Relational operators](#a-namelogicalalogical-operators)
+    - [Logical operators](#a-namelogicalalogical-operators)
+- [Methods](#a-namemethodsamethods)
+- [Method overloading](#a-nameoverloadingamethod-overloading)
+- [Strings](#a-namestringsastrings)
+- [Decision making](#a-namedecisionadecision-making)
+    - [If... Else statements](#a-nameifelseaif-else-statements)
+    - [Switch statements](#a-nameswitchaswitch-statements)
+- [Arrays](#a-namearraysaarrays)
+- [Loops](#a-nameloopsaloops)
+    - [While Loop](#a-namewhileawhile-loop)
+    - [Do...While Loop](#a-namedowhileadowhile-loop)
+    - [For Loop](#a-nameforafor-loop)
+    - [For Each Loop](#a-nameforeachafor-each-loop)
+- [Objects](#a-nameobjectsaobjects)
